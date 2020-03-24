@@ -4,6 +4,7 @@ import { NgModule } from '@angular/core';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { NgxPlaidLinkModule } from 'ngx-plaid-link';
+import { SessionStoreService } from './services/store/session-store.service';
 
 
 @NgModule({
@@ -15,7 +16,9 @@ import { NgxPlaidLinkModule } from 'ngx-plaid-link';
     AppRoutingModule,
     NgxPlaidLinkModule,
   ],
-  providers: [],
+  providers: [
+    SessionStoreService
+  ],
   bootstrap: [AppComponent],
 })
 export class AppModule { }

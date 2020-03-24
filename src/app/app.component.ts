@@ -1,5 +1,7 @@
 import { AfterViewInit, Component, OnInit } from '@angular/core';
 import { API_KEY } from './constants';
+import { SessionStoreService } from './services/store/session-store.service';
+import { PlaidOnSuccessArgs } from 'ngx-plaid-link/lib/interfaces';
 
 @Component({
   selector: 'app-root',
@@ -11,12 +13,11 @@ export class AppComponent implements OnInit, AfterViewInit {
 
   API_KEY  = API_KEY;
 
-  constructor() {}
+  constructor(public userSession: SessionStoreService) {}
 
   ngOnInit(): void {
   }
 
-  // Create and open programatically once the library is loaded.
   ngAfterViewInit() { }
 
   onPlaidClick(event: any) {
@@ -35,7 +36,7 @@ export class AppComponent implements OnInit, AfterViewInit {
     console.log('onPlaidExit : ', event);
   }
 
-  onPlaidSuccess(event: any) {
-    console.log('onPlaidSuccess : ', event);
+  onPlaidSuccess(event: PlaidOnSuccessArgs) {
+    this.userSession.setUserDetails(event);
   }
 }
