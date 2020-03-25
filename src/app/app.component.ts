@@ -2,6 +2,7 @@ import { AfterViewInit, Component, OnInit } from '@angular/core';
 import { API_KEY } from './constants';
 import { SessionStoreService } from './services/store/session-store.service';
 import { PlaidOnSuccessArgs } from 'ngx-plaid-link/lib/interfaces';
+import { CrudOperationsService } from './services/httpcalls/crud-operations.service';
 
 @Component({
   selector: 'app-root',
@@ -13,7 +14,8 @@ export class AppComponent implements OnInit, AfterViewInit {
 
   API_KEY  = API_KEY;
 
-  constructor(public userSession: SessionStoreService) {}
+  constructor(public userSession: SessionStoreService,
+              private service: CrudOperationsService) {}
 
   ngOnInit(): void {
   }
@@ -38,5 +40,9 @@ export class AppComponent implements OnInit, AfterViewInit {
 
   onPlaidSuccess(event: PlaidOnSuccessArgs) {
     this.userSession.setUserDetails(event);
+  }
+
+  onGetTransactions() {
+    this.service.getTransactions();
   }
 }

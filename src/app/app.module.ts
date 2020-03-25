@@ -5,6 +5,8 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { NgxPlaidLinkModule } from 'ngx-plaid-link';
 import { SessionStoreService } from './services/store/session-store.service';
+import { CrudOperationsService } from './services/httpcalls/crud-operations.service';
+import { HttpClientModule } from '@angular/common/http';
 
 
 @NgModule({
@@ -15,9 +17,11 @@ import { SessionStoreService } from './services/store/session-store.service';
     BrowserModule,
     AppRoutingModule,
     NgxPlaidLinkModule,
+    HttpClientModule,
   ],
   providers: [
-    SessionStoreService
+    SessionStoreService,
+    CrudOperationsService
   ],
   bootstrap: [AppComponent],
 })
