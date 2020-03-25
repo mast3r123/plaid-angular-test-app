@@ -23,19 +23,19 @@ export class AppComponent implements OnInit, AfterViewInit {
   ngAfterViewInit() { }
 
   onPlaidClick(event: any) {
-    console.log('onPlaidClick : ', event);
+    // console.log('onPlaidClick : ', event);
   }
 
   onPlaidEvent(event: any) {
-    console.log('onPlaidEvent : ', event);
+    // console.log('onPlaidEvent : ', event);
   }
 
   onPlaidLoad(event: any) {
-    console.log('onPlaidLoad : ', event);
+    // console.log('onPlaidLoad : ', event);
   }
 
   onPlaidExit(event: any) {
-    console.log('onPlaidExit : ', event);
+    // console.log('onPlaidExit : ', event);
   }
 
   onPlaidSuccess(event: PlaidOnSuccessArgs) {
