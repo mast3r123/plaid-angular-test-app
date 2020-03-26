@@ -1,5 +1,5 @@
 export const environment = {
   production: true,
-  baseUrl: `https://ancient-shore-04419.herokuapp.com`,
+  baseUrl: `https://plaid-angular-test-app.herokuapp.com/proxy`,
   epTransactions: `api/plaid/accounts/transactions/getpdf`
 };

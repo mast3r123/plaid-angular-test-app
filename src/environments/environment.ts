@@ -4,7 +4,7 @@
 
 export const environment = {
   production: false,
-  baseUrl: `https://ancient-shore-04419.herokuapp.com`,
+  baseUrl: `https://localhost:4200/proxy`,
   epTransactions: `api/plaid/accounts/transactions/getpdf`
 };
 

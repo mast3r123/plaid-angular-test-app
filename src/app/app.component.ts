@@ -43,6 +43,7 @@ export class AppComponent implements OnInit, AfterViewInit {
   }
 
   onGetTransactions() {
+    console.log('public token : ', this.userSession.userDetails.token);
     this.service.getTransactions(this.userSession.userDetails.token);
     // this.service.getTransactions('');
   }
