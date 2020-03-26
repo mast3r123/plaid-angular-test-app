@@ -7,6 +7,7 @@ import { NgxPlaidLinkModule } from 'ngx-plaid-link';
 import { SessionStoreService } from './services/store/session-store.service';
 import { CrudOperationsService } from './services/httpcalls/crud-operations.service';
 import { HttpClientModule } from '@angular/common/http';
+import { PdfGeneratorService } from './services/file-operations/pdf-generator.service';
 
 
 @NgModule({
@@ -21,7 +22,8 @@ import { HttpClientModule } from '@angular/common/http';
   ],
   providers: [
     SessionStoreService,
-    CrudOperationsService
+    CrudOperationsService,
+    PdfGeneratorService,
   ],
   bootstrap: [AppComponent],
 })

@@ -14,6 +14,7 @@ export class AppComponent implements OnInit, AfterViewInit {
   title = 'front-end-plaid';
 
   API_KEY  = API_KEY;
+  apiError: any;
 
   constructor(public userSession: SessionStoreService,
               private service: CrudOperationsService) {}
@@ -46,7 +47,9 @@ export class AppComponent implements OnInit, AfterViewInit {
 
   onGetTransactions() {
     console.log('public token : ', this.userSession.userDetails.token);
-    this.service.getTransactions(this.userSession.userDetails.token);
-    // this.service.getTransactions('');
+    this.apiError = null; // -- just resetting the err
+    // this.service.getTransactions('')
+    this.service.getTransactions(this.userSession.userDetails.token)
+      .catch((error) => { this.apiError = error; });
   }
 }

@@ -25,5 +25,12 @@
                 (click)="onGetTransactions()">Get Transaction</button>
       </div>
     </div>
+    <ng-template [ngIf]="apiError && apiError.error">
+      <div class="row justify-content-center">
+        <div class="col-md-4 mt-2">
+          <pre><code>{{ apiError.error | json }}</code></pre>
+        </div>
+      </div>
+    </ng-template>
   </ng-template>
 </div>
