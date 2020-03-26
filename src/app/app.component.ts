@@ -3,6 +3,7 @@ import { API_KEY } from './constants';
 import { SessionStoreService } from './services/store/session-store.service';
 import { PlaidOnSuccessArgs } from 'ngx-plaid-link/lib/interfaces';
 import { CrudOperationsService } from './services/httpcalls/crud-operations.service';
+import { environment } from '../environments/environment';
 
 @Component({
   selector: 'app-root',
@@ -18,6 +19,7 @@ export class AppComponent implements OnInit, AfterViewInit {
               private service: CrudOperationsService) {}
 
   ngOnInit(): void {
+    console.log('env : ', environment);
   }
 
   ngAfterViewInit() { }
