@@ -29,7 +29,7 @@
     "bootstrap": "^4.4.1",
     "express": "^4.17.1",
     "express-http-proxy": "^1.6.0",
-    "jquery": "^3.4.1",
+    "jquery": "^3.5.0",
     "jspdf": "^1.5.3",
     "jspdf-autotable": "^3.3.1",
     "ngx-plaid-link": "^1.0.2",
